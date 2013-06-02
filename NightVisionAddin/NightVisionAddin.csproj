@@ -50,4 +50,7 @@
     <Compile Include="NightVisionExtension.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <EmbeddedResource Include=".addin.xml" />
+  </ItemGroup>
 </Project>

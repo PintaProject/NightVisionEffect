@@ -50,8 +50,3 @@ using Mono.Addins;
 
 //[assembly: AssemblyDelaySign(false)]
 //[assembly: AssemblyKeyFile("")]
-
-[assembly: Addin ("NightVisionEffect", "0.1", Category = "Effects")]
-[assembly: AddinName ("Night Vision Effect")]
-[assembly: AddinDescription ("A simple add-in that will recolour your image so that it looks like a night vision picture.")]
-[assembly: AddinDependency ("Pinta", "1.5")]

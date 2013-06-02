@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Addin id="NightVisionEffect" version="1.0" category="Effects">
+	<Header>
+		<Name>Night Vision Effect</Name>
+		<Description>A simple add-in that will recolour your image so that it looks like a night vision picture.</Description>
+	</Header>
+	<Dependencies>
+		<Addin id="Pinta" version="1.5" />
+	</Dependencies>
+</Addin>

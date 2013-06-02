@@ -11,8 +11,8 @@ This is a simple effect, that will recolour your image to look like it's been ta
 
 ##Roadmap
 
-    - Currently this has no GUI or configuration options,  which it really should have.
-    - It sholud also maybe automatically use some of the other effects for better results. (Like Noise & Soften.)
+- Currently this has no GUI or configuration options,  which it really should have.
+- It should also maybe automatically use some of the other effects for better results. (Like Noise & Soften.)
 
 ## License
 

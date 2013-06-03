@@ -4,7 +4,7 @@
 	<Header>
 		<Name>Night Vision Effect</Name>
 		<Description>A simple add-in that will recolour your image so that it looks like a night vision picture.</Description>
-		<Author>LPinta Project</Author>
+		<Author>Pinta Project</Author>
 		<Url>https://github.com/PintaProject/NightVisionEffect</Url>
 		<Name locale="nb">Nattkikkert-effekt</Name>
 		<Description locale="nb">En enkel effekt som vil endre fargene på bildet ditt slik at det ser ut som det er tatt med nattkikkert.</Description>
@@ -14,7 +14,8 @@
 		<Addin id="Pinta" version="1.5" />
 	</Dependencies>
 	<!-- These are strings used in the add-in and their translations. 
-	Note that some of them might be in Pinta (Especially effect submenu names and should be translated the same.-->
+	Note that some of the strings might be in Pinta from before, especially effect submenu names,
+	and should be translated the same way, so that we don't end up with redundant submenus.-->
 	<Localizer type="StringTable">
 		<Locale id="nb">
 			<Msg id="Night Vision" str="Nattkikkert" />

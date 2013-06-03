@@ -25,6 +25,7 @@
 // THE SOFTWARE.
 using System;
 using Pinta.Core;
+using Mono.Addins;
 
 namespace NightVisionAddin
 {
@@ -35,8 +36,8 @@ namespace NightVisionAddin
 		}
 
 		//TODO: This needs to translate with GetString, but currently Mono.Posix is broken on Windows
-		public override string Name { get { return "Night Vision"; }}
-		public override string EffectMenuCategory { get { return "Stylize"; }}
+		public override string Name { get { return AddinManager.CurrentLocalizer.GetString ("Night Vision"); }}
+		public override string EffectMenuCategory { get { return AddinManager.CurrentLocalizer.GetString ("Stylize"); }}
 
 		//We don't make this one configurable (At the moment), so no need for all those overrides
 		//TODO: Add a GUI to configure

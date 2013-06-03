@@ -3,6 +3,10 @@
 	<Header>
 		<Name>Night Vision Effect</Name>
 		<Description>A simple add-in that will recolour your image so that it looks like a night vision picture.</Description>
+		<Author>LPinta Project</Author>
+        <Url>https://github.com/PintaProject/NightVisionEffect</Url>
+		<Name locale="nb">Nattkikkert-effekt</Name>
+		<Description locale="nb">En enkel effekt som vil endre fargene på bildet ditt slik at det ser ut som det er tatt med nattkikkert.</Description>
 	</Header>
 	<Dependencies>
 		<Addin id="Pinta" version="1.5" />

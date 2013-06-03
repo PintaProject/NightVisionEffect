@@ -16,7 +16,7 @@
 	<!-- These are strings used in the add-in and their translations. 
 	Note that some of them might be in Pinta (Especially effect submenu names and should be translated the same.-->
 	<Localizer type="StringTable">
-		<Locale id="es">
+		<Locale id="nb">
 			<Msg id="Night Vision" str="Nattkikkert" />
 			<Msg id="Stylize" str="Stilisér" />
 		</Locale>

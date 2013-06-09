@@ -35,7 +35,6 @@ namespace NightVisionAddin
 		{
 		}
 
-		//TODO: This needs to translate with GetString, but currently Mono.Posix is broken on Windows
 		public override string Name { get { return AddinManager.CurrentLocalizer.GetString ("Night Vision"); }}
 		public override string EffectMenuCategory { get { return AddinManager.CurrentLocalizer.GetString ("Stylize"); }}
 

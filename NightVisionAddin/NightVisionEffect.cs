@@ -25,6 +25,8 @@
 // THE SOFTWARE.
 using System;
 using Pinta.Core;
+using Pinta.Gui.Widgets;
+using Pinta;
 using Mono.Addins;
 
 namespace NightVisionAddin
@@ -33,22 +35,34 @@ namespace NightVisionAddin
 	{
 		public NightVisionEffect ()
 		{
+			EffectData = new NightVisionData ();
 		}
 
 		public override string Name { get { return AddinManager.CurrentLocalizer.GetString ("Night Vision"); }}
 		public override string EffectMenuCategory { get { return AddinManager.CurrentLocalizer.GetString ("Stylize"); }}
 
-		//We don't make this one configurable (At the moment), so no need for all those overrides
-		//TODO: Add a GUI to configure
 		//TODO: Pull in other effects like noise and soften to make it even more nightvision-y
+
+		public override bool IsConfigurable { get { return true; } }
+
+		public override bool LaunchConfiguration ()
+		{
+			return EffectHelper.LaunchSimpleEffectDialog (this);
+		}
 
 		protected override ColorBgra Render (ColorBgra pixel)
 		{
-			pixel.G = Utility.ClampToByte((int)((float)pixel.B * 0.1 + (float)pixel.G * 0.6 + (float)pixel.R * 0.2));
+			pixel.G = Utility.ClampToByte((int)((float)pixel.B * 0.1 + (float)pixel.G * (EffectData as NightVisionData).Brightness + (float)pixel.R * 0.2));
 			pixel.B = 0;
 			pixel.R = 0;
 
 			return pixel;
+		}
+
+		public class NightVisionData : EffectData
+		{
+			[MinimumValue(0), MaximumValue(1)]
+			public double Brightness = 0.6;
 		}
 	}
 }

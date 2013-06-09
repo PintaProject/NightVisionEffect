@@ -30,18 +30,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
-      <Package>gtk-sharp-2.0</Package>
-    </Reference>
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <Reference Include="Pinta.Core">
       <HintPath>lib\Pinta.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Pinta.Tools">
-      <HintPath>lib\Pinta.Tools.dll</HintPath>
-    </Reference>
     <Reference Include="Mono.Addins, Version=0.6.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
       <Private>False</Private>
-      <Package>mono-addins</Package>
+    </Reference>
+    <Reference Include="Pinta.Gui.Widgets">
+      <HintPath>lib\Pinta.Gui.Widgets.dll</HintPath>
+    </Reference>
+    <Reference Include="Pinta.Effects">
+      <HintPath>lib\Pinta.Effects.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

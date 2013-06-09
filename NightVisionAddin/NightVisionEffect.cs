@@ -24,8 +24,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 using System;
+using Cairo;
 using Pinta.Core;
 using Pinta.Gui.Widgets;
+using Pinta.Effects;
 using Pinta;
 using Mono.Addins;
 
@@ -50,6 +52,23 @@ namespace NightVisionAddin
 			return EffectHelper.LaunchSimpleEffectDialog (this);
 		}
 
+		public override void Render (ImageSurface src, ImageSurface dst, Gdk.Rectangle[] rois)
+		{
+			if(!((EffectData as NightVisionData).Noise))
+			{
+				foreach (var rect in rois)
+					Render (src, dst, rect); //Uses superclass chain of rendering to pass render down to single-pixel renderer.
+			} else
+			{
+				AddNoiseEffect noiseEffect = new AddNoiseEffect();
+
+				noiseEffect.Render (src, dst, rois);
+
+				foreach (var rect in rois)
+					Render (dst, dst, rect); //Have it render colour changes pixel by pixel on the modified surface.
+			}
+		}
+
 		protected override ColorBgra Render (ColorBgra pixel)
 		{
 			pixel.G = Utility.ClampToByte((int)((float)pixel.B * 0.1 + (float)pixel.G * (EffectData as NightVisionData).Brightness + (float)pixel.R * 0.2));
@@ -63,6 +82,8 @@ namespace NightVisionAddin
 		{
 			[MinimumValue(0), MaximumValue(1)]
 			public double Brightness = 0.6;
+
+			public bool Noise = false;
 		}
 	}
 }

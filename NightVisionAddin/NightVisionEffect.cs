@@ -49,7 +49,7 @@ namespace NightVisionAddin
 
 		public override bool LaunchConfiguration ()
 		{
-			return EffectHelper.LaunchSimpleEffectDialog (this);
+			return EffectHelper.LaunchSimpleEffectDialog (this, AddinManager.CurrentLocalizer);
 		}
 
 		public override void Render (ImageSurface src, ImageSurface dst, Gdk.Rectangle[] rois)

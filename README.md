@@ -17,10 +17,6 @@ Anyone wishing to contribute translations can do so by editing ```NightVisionAdd
 
 All bugs should be reported to the issue tracker on this Github page, not to the main Pinta bug tracker.
 
-##Roadmap
-
-- Currently this has no GUI or configuration options,  which it really should have.
-- It should also maybe automatically use some of the other effects for better results. (Like Noise & Soften.)
 
 ## License
 

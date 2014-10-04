@@ -6,7 +6,11 @@
 		<Description>A simple add-in that will recolour your image so that it looks like a night vision picture.</Description>
 		<Author>Pinta Project</Author>
 		<Url>https://github.com/PintaProject/NightVisionEffect</Url>
+		<Name locale="ca">Efecte de visió nocturna</Name>
+		<Name locale="es">Efecto de visión nocturna</Name>
 		<Name locale="nb">Nattkikkert-effekt</Name>
+		<Description locale="ca">Aquest connector acolorirà la vostra imatge perquè sembli vista a través d’un dispositiu de visió nocturna.</Description>
+		<Description locale="es">Este complemento coloreará la imagen para que parezca vista a través de un dispositivo de visión nocturna.</Description>
 		<Description locale="nb">En enkel effekt som vil endre fargene på bildet ditt slik at det ser ut som det er tatt med nattkikkert.</Description>
 	</Header>
 	<!-- This is technical info for Pinta to identify the add-in. -->
@@ -17,6 +21,14 @@
 	Note that some of the strings might be in Pinta from before, especially effect submenu names,
 	and should be translated the same way, so that we don't end up with redundant submenus.-->
 	<Localizer type="StringTable">
+		<Locale id="ca">
+			<Msg id="Night Vision" str="Visió nocturna" />
+			<Msg id="Stylize" str="Estilitza" />
+		</Locale>
+		<Locale id="es">
+			<Msg id="Night Vision" str="Visión nocturna" />
+			<Msg id="Stylize" str="Estilizar" />
+		</Locale>
 		<Locale id="nb">
 			<Msg id="Night Vision" str="Nattkikkert" />
 			<Msg id="Stylize" str="Stilisér" />

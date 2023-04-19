@@ -3,6 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NightVisionAddin", "NightVisionAddin\NightVisionAddin.csproj", "{CAFAABBC-6D67-4F9F-8FD0-15F553C5A66D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pinta.Core", "Pinta\Pinta.Core\Pinta.Core.csproj", "{A99C72F9-BEF5-47CE-9CBC-99DACCA5691F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pinta.Resources", "Pinta\Pinta.Resources\Pinta.Resources.csproj", "{2725F77F-E4B6-402F-B519-ABDDA189999F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pinta.Effects", "Pinta\Pinta.Effects\Pinta.Effects.csproj", "{6C115F26-EACC-44BA-881B-7151D2F8B503}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pinta.Gui.Widgets", "Pinta\Pinta.Gui.Widgets\Pinta.Gui.Widgets.csproj", "{C6198C97-F650-474F-A290-A4D39BA269AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +21,22 @@ Global
 		{CAFAABBC-6D67-4F9F-8FD0-15F553C5A66D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAFAABBC-6D67-4F9F-8FD0-15F553C5A66D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAFAABBC-6D67-4F9F-8FD0-15F553C5A66D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A99C72F9-BEF5-47CE-9CBC-99DACCA5691F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A99C72F9-BEF5-47CE-9CBC-99DACCA5691F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A99C72F9-BEF5-47CE-9CBC-99DACCA5691F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A99C72F9-BEF5-47CE-9CBC-99DACCA5691F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2725F77F-E4B6-402F-B519-ABDDA189999F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2725F77F-E4B6-402F-B519-ABDDA189999F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2725F77F-E4B6-402F-B519-ABDDA189999F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2725F77F-E4B6-402F-B519-ABDDA189999F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C115F26-EACC-44BA-881B-7151D2F8B503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C115F26-EACC-44BA-881B-7151D2F8B503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C115F26-EACC-44BA-881B-7151D2F8B503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C115F26-EACC-44BA-881B-7151D2F8B503}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6198C97-F650-474F-A290-A4D39BA269AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6198C97-F650-474F-A290-A4D39BA269AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6198C97-F650-474F-A290-A4D39BA269AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6198C97-F650-474F-A290-A4D39BA269AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = NightVisionAddin\NightVisionAddin.csproj

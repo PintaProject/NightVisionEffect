@@ -1,59 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>10.0.0</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{CAFAABBC-6D67-4F9F-8FD0-15F553C5A66D}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>NightVisionAddin</RootNamespace>
-    <AssemblyName>NightVisionAddin</AssemblyName>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+
+    <Version>0.2.0.0</Version>
+    <Authors>Pinta Project</Authors>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <Reference Include="Pinta.Core">
-      <HintPath>lib\Pinta.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Addins, Version=0.6.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Pinta.Gui.Widgets">
-      <HintPath>lib\Pinta.Gui.Widgets.dll</HintPath>
-    </Reference>
-    <Reference Include="Pinta.Effects">
-      <HintPath>lib\Pinta.Effects.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Cairo" />
-    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
-      <Private>False</Private>
-    </Reference>
+    <PackageReference Include="Mono.Addins" Version="1.4.2-alpha.4" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="NightVisionExtension.cs" />
-    <Compile Include="NightVisionEffect.cs" />
+    <ProjectReference Include="..\Pinta\Pinta.Core\Pinta.Core.csproj" />
+    <ProjectReference Include="..\Pinta\Pinta.Effects\Pinta.Effects.csproj" />
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <EmbeddedResource Include=".addin.xml" />
   </ItemGroup>

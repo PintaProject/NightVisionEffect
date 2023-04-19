@@ -34,7 +34,7 @@ namespace NightVisionAddin
 		#region IExtension Members
 		public void Initialize ()
 		{
-			PintaCore.Effects.RegisterEffect(new NightVisionEffect());
+			PintaCore.Effects.RegisterEffect (new NightVisionEffect ());
 		}
 
 		public void Uninitialize ()

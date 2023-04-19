@@ -1,0 +1,3 @@
+[submodule "Pinta"]
+	path = Pinta
+	url = https://github.com/PintaProject/Pinta.git

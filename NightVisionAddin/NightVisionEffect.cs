@@ -27,9 +27,8 @@ using System;
 using Cairo;
 using Pinta.Core;
 using Pinta.Gui.Widgets;
-using Pinta.Effects;
-using Pinta;
 using Mono.Addins;
+using Pinta.Effects;
 
 namespace NightVisionAddin
 {
@@ -40,27 +39,27 @@ namespace NightVisionAddin
 			EffectData = new NightVisionData ();
 		}
 
-		public override string Name { get { return AddinManager.CurrentLocalizer.GetString ("Night Vision"); }}
-		public override string EffectMenuCategory { get { return AddinManager.CurrentLocalizer.GetString ("Stylize"); }}
+		public override string Name => AddinManager.CurrentLocalizer.GetString ("Night Vision");
+		public override string EffectMenuCategory => AddinManager.CurrentLocalizer.GetString ("Stylize");
 
 		//TODO: Pull in other effects like noise and soften to make it even more nightvision-y
 
-		public override bool IsConfigurable { get { return true; } }
+		public override bool IsConfigurable => true;
 
-		public override bool LaunchConfiguration ()
+		public override void LaunchConfiguration ()
 		{
-			return EffectHelper.LaunchSimpleEffectDialog (this, AddinManager.CurrentLocalizer);
+			LaunchSimpleEffectDialog (AddinManager.CurrentLocalizer);
 		}
 
-		public override void Render (ImageSurface src, ImageSurface dst, Gdk.Rectangle[] rois)
+		public NightVisionData Data => (NightVisionData) EffectData!; // NRT - Set in constructor.
+
+		public override void Render (ImageSurface src, ImageSurface dst, RectangleI[] rois)
 		{
-			if(!((EffectData as NightVisionData).Noise))
-			{
+			if (!Data.Noise) {
 				foreach (var rect in rois)
 					Render (src, dst, rect); //Uses superclass chain of rendering to pass render down to single-pixel renderer.
-			} else
-			{
-				AddNoiseEffect noiseEffect = new AddNoiseEffect();
+			} else {
+				var noiseEffect = new AddNoiseEffect ();
 
 				noiseEffect.Render (src, dst, rois);
 
@@ -69,18 +68,20 @@ namespace NightVisionAddin
 			}
 		}
 
-		protected override ColorBgra Render (ColorBgra pixel)
+		protected override ColorBgra Render (in ColorBgra pixel)
 		{
-			pixel.G = Utility.ClampToByte((int)((float)pixel.B * 0.1 + (float)pixel.G * (EffectData as NightVisionData).Brightness + (float)pixel.R * 0.2));
-			pixel.B = 0;
-			pixel.R = 0;
+			return new ColorBgra () {
+				G = Utility.ClampToByte ((int) ((float) pixel.B * 0.1 + (float) pixel.G * Data.Brightness + (float) pixel.R * 0.2)),
+				B = 0,
+				R = 0,
+				A = pixel.A
 
-			return pixel;
+			};
 		}
 
 		public class NightVisionData : EffectData
 		{
-			[MinimumValue(0), MaximumValue(1)]
+			[MinimumValue (0), MaximumValue (1)]
 			public double Brightness = 0.6;
 
 			public bool Noise = false;

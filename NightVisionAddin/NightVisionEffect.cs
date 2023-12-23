@@ -46,6 +46,8 @@ namespace NightVisionAddin
 
 		public override bool IsConfigurable => true;
 
+		public override bool IsTileable => true;
+
 		public override void LaunchConfiguration ()
 		{
 			LaunchSimpleEffectDialog (AddinManager.CurrentLocalizer);
@@ -53,7 +55,7 @@ namespace NightVisionAddin
 
 		public NightVisionData Data => (NightVisionData) EffectData!; // NRT - Set in constructor.
 
-		public override void Render (ImageSurface src, ImageSurface dst, RectangleI[] rois)
+		public override void Render (ImageSurface src, ImageSurface dst, ReadOnlySpan<RectangleI> rois)
 		{
 			if (!Data.Noise) {
 				foreach (var rect in rois)

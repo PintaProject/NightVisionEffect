@@ -25,7 +25,7 @@ jobs:
     - name: Install mautil
       run: dotnet tool install --global Mono.Addins.UtilTool
     - name: Create Package
-      run: mautil pack NightVisionAddin/bin/Release/net7.0/NightVisionAddin.dll
+      run: mautil pack NightVisionAddin/bin/Release/net8.0/NightVisionAddin.dll
     - name: Upload Package
       uses: actions/upload-artifact@v3
       with:

@@ -6,12 +6,6 @@
 		<Description>A simple add-in that will recolor your image so that it looks like a night vision picture.</Description>
 		<Author>Pinta Project</Author>
 		<Url>https://github.com/PintaProject/NightVisionEffect</Url>
-		<Name locale="ca">Efecte de visió nocturna</Name>
-		<Name locale="es">Efecto de visión nocturna</Name>
-		<Name locale="nb">Nattkikkert-effekt</Name>
-		<Description locale="ca">Aquest connector acolorirà la vostra imatge perquè sembli vista a través d’un dispositiu de visió nocturna.</Description>
-		<Description locale="es">Este complemento coloreará la imagen para que parezca vista a través de un dispositivo de visión nocturna.</Description>
-		<Description locale="nb">En enkel effekt som vil endre fargene på bildet ditt slik at det ser ut som det er tatt med nattkikkert.</Description>
 	</Header>
 
 	<!-- Indicate the required Pinta version for the add-in. -->

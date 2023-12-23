@@ -137,4 +137,8 @@
     <value>Night Vision Effect</value>
     <comment/>
   </data>
+  <data name="A simple add-in that will recolor your image so that it looks like a night vision picture." xml:space="preserve">
+    <value>A simple add-in that will recolor your image so that it looks like a night vision picture.</value>
+    <comment/>
+  </data>
 </root>

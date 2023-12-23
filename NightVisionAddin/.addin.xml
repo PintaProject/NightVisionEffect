@@ -3,7 +3,7 @@
 	<!-- This is the information shown in the add-in manager, with translations -->
 	<Header>
 		<Name>Night Vision Effect</Name>
-		<Description>A simple add-in that will recolour your image so that it looks like a night vision picture.</Description>
+		<Description>A simple add-in that will recolor your image so that it looks like a night vision picture.</Description>
 		<Author>Pinta Project</Author>
 		<Url>https://github.com/PintaProject/NightVisionEffect</Url>
 		<Name locale="ca">Efecte de visió nocturna</Name>
@@ -13,25 +13,12 @@
 		<Description locale="es">Este complemento coloreará la imagen para que parezca vista a través de un dispositivo de visión nocturna.</Description>
 		<Description locale="nb">En enkel effekt som vil endre fargene på bildet ditt slik at det ser ut som det er tatt med nattkikkert.</Description>
 	</Header>
-	<!-- This is technical info for Pinta to identify the add-in. -->
+
+	<!-- Indicate the required Pinta version for the add-in. -->
 	<Dependencies>
 		<Addin id="Pinta" version="2.2" />
 	</Dependencies>
-	<!-- These are strings used in the add-in and their translations.
-	Note that some of the strings might be in Pinta from before, especially effect submenu names,
-	and should be translated the same way, so that we don't end up with redundant submenus.-->
-	<Localizer type="StringTable">
-		<Locale id="ca">
-			<Msg id="Night Vision" str="Visió nocturna" />
-			<Msg id="Stylize" str="Estilitza" />
-		</Locale>
-		<Locale id="es">
-			<Msg id="Night Vision" str="Visión nocturna" />
-			<Msg id="Stylize" str="Estilizar" />
-		</Locale>
-		<Locale id="nb">
-			<Msg id="Night Vision" str="Nattkikkert" />
-			<Msg id="Stylize" str="Stilisér" />
-		</Locale>
-	</Localizer>
+
+	<!-- Use string resources (from satellite assemblies) to localize strings used in the add-in -->
+	<Localizer type="StringResource" />
 </Addin>

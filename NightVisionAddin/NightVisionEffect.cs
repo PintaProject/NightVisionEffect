@@ -83,9 +83,10 @@ namespace NightVisionAddin
 
 		public class NightVisionData : EffectData
 		{
-			[MinimumValue (0), MaximumValue (1)]
+			[Caption ("Brightness"), MinimumValue (0), MaximumValue (1)]
 			public double Brightness = 0.6;
 
+			[Caption ("Noise")]
 			public bool Noise = false;
 		}
 	}

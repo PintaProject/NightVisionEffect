@@ -20,6 +20,8 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.0.x
+    - name: Merge translations into add-in manifest
+      run: dotnet run --project Pinta/installer/addins/Pinta.AddinUtils.csproj -- localize-manifest --manifest-file NightVisionAddin/.addin.xml --resource-files NightVisionAddin/Resources/*.resx
     - name: Compile
       run: dotnet build -c Release
     - name: Install mautil

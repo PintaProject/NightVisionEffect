@@ -1,5 +1,7 @@
 # Pinta Night Vision Effect
 
+[![Translation status](https://hosted.weblate.org/widget/pinta/nightvisioneffect/287x66-grey.png)](https://hosted.weblate.org/engage/pinta/)
+
 This is a simple effect, that will recolour your image to look like it's been taken with a night vision camera. Afterwards you can apply the Noise effect for an even better look!
 
 ## Notes

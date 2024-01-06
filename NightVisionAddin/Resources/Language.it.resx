@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
@@ -58,4 +58,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Stylize" xml:space="preserve">
+    <value>Stilizza</value>
+    <comment />
+  </data>
+  <data name="Night Vision" xml:space="preserve">
+    <value>Visione Notturna</value>
+    <comment />
+  </data>
+  <data name="Brightness" xml:space="preserve">
+    <value>Luminosità</value>
+    <comment />
+  </data>
+  <data name="Noise" xml:space="preserve">
+    <value>Rumore</value>
+    <comment />
+  </data>
+  <data name="Night Vision Effect" xml:space="preserve">
+    <value>Effetto Visione Notturna</value>
+    <comment />
+  </data>
+  <data name="A simple add-in that will recolor your image so that it looks like a night vision picture." xml:space="preserve">
+    <value>Un semplice add-in che ricolorerà la tua immagine in modo da farla sembrare come un'immagine presa con la visione notturna.</value>
+    <comment />
+  </data>
 </root>

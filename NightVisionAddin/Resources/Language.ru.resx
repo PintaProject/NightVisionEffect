@@ -63,7 +63,7 @@
     <comment />
   </data>
   <data name="Night Vision" xml:space="preserve">
-    <value>Ночное видение</value>
+    <value>Ночной вид</value>
     <comment />
   </data>
   <data name="Noise" xml:space="preserve">
@@ -71,7 +71,7 @@
     <comment />
   </data>
   <data name="Night Vision Effect" xml:space="preserve">
-    <value>Эффект ночного видения</value>
+    <value>Эффект ночного вида</value>
     <comment />
   </data>
   <data name="Brightness" xml:space="preserve">
@@ -79,7 +79,7 @@
     <comment />
   </data>
   <data name="A simple add-in that will recolor your image so that it looks like a night vision picture." xml:space="preserve">
-    <value>Простое дополнение, которое перекрасит ваше изображение, чтобы оно выглядело как картинка с камеры ночного видения.</value>
+    <value>Простое дополнение, которое перекрасит ваше изображение, чтобы оно выглядело как фотография во время ночной съёмки.</value>
     <comment />
   </data>
 </root>

@@ -74,4 +74,12 @@
     <value>Ein einfaches Add-in, welches die Farben deines Bildes so abändert, dass es aussieht, wie ein Nachtsicht-Bild.</value>
     <comment />
   </data>
+  <data name="Stylize" xml:space="preserve">
+    <value>Stilisieren</value>
+    <comment />
+  </data>
+  <data name="Noise" xml:space="preserve">
+    <value>Rauschen</value>
+    <comment />
+  </data>
 </root>

@@ -63,7 +63,7 @@
     <comment />
   </data>
   <data name="Night Vision" xml:space="preserve">
-    <value>Nattseende</value>
+    <value>Mörkerseende</value>
     <comment />
   </data>
   <data name="Brightness" xml:space="preserve">
@@ -75,11 +75,11 @@
     <comment />
   </data>
   <data name="Night Vision Effect" xml:space="preserve">
-    <value>Nattseende effekt</value>
+    <value>Mörkerseendeeffekt</value>
     <comment />
   </data>
   <data name="A simple add-in that will recolor your image so that it looks like a night vision picture." xml:space="preserve">
-    <value>Ett simpelt tillägg som kommer att färga om din bild så att den ser ut som en mörkerseende bild.</value>
+    <value>Ett enkelt tillägg som kommer att färga om din bild, så att den ser ut som en mörkerseendebild.</value>
     <comment />
   </data>
 </root>

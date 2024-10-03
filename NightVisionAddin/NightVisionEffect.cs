@@ -24,6 +24,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 using System;
+using System.Threading.Tasks;
 using Cairo;
 using Pinta.Core;
 using Pinta.Gui.Widgets;
@@ -48,9 +49,9 @@ namespace NightVisionAddin
 
 		public override bool IsTileable => true;
 
-		public override void LaunchConfiguration ()
+		public override Task<bool> LaunchConfiguration ()
 		{
-			LaunchSimpleEffectDialog (AddinManager.CurrentLocalizer);
+			return LaunchSimpleEffectDialog (AddinManager.CurrentLocalizer);
 		}
 
 		public NightVisionData Data => (NightVisionData) EffectData!; // NRT - Set in constructor.

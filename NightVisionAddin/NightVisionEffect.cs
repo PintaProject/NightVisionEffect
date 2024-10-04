@@ -62,7 +62,7 @@ namespace NightVisionAddin
 				foreach (var rect in rois)
 					Render (src, dst, rect); //Uses superclass chain of rendering to pass render down to single-pixel renderer.
 			} else {
-				var noiseEffect = new AddNoiseEffect ();
+				var noiseEffect = new AddNoiseEffect (PintaCore.Services);
 
 				noiseEffect.Render (src, dst, rois);
 

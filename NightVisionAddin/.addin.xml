@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Addin id="NightVisionEffect" version="1.3.1" category="Effects">
+<Addin id="NightVisionEffect" version="1.3.2" category="Effects">
 	<!-- This is the information shown in the add-in manager, with translations -->
 	<Header>
 		<Name>Night Vision Effect</Name>
@@ -10,7 +10,7 @@
 
 	<!-- Indicate the required Pinta version for the add-in. -->
 	<Dependencies>
-		<Addin id="Pinta" version="2.2" />
+		<Addin id="Pinta" version="3.0" />
 	</Dependencies>
 
 	<!-- Use string resources (from satellite assemblies) to localize strings used in the add-in -->

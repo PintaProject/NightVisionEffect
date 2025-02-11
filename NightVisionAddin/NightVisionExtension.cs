@@ -26,22 +26,19 @@
 
 using Pinta.Core;
 
-namespace NightVisionAddin
-{
-	[Mono.Addins.Extension]
-	public sealed class NightVisionExtension : IExtension
-	{
-		#region IExtension Members
-		public void Initialize ()
-		{
-			PintaCore.Effects.RegisterEffect (new NightVisionEffect ());
-		}
+namespace NightVisionAddin;
 
-		public void Uninitialize ()
-		{
-			PintaCore.Effects.UnregisterInstanceOfEffect (typeof (NightVisionEffect));
-		}
-		#endregion
+[Mono.Addins.Extension]
+public sealed class NightVisionExtension : IExtension
+{
+	public void Initialize ()
+	{
+		PintaCore.Effects.RegisterEffect (new NightVisionEffect ());
+	}
+
+	public void Uninitialize ()
+	{
+		PintaCore.Effects.UnregisterInstanceOfEffect (typeof (NightVisionEffect));
 	}
 }
 

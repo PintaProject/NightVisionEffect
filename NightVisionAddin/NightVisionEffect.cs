@@ -33,7 +33,7 @@ using Pinta.Effects;
 
 namespace NightVisionAddin
 {
-	public class NightVisionEffect : BaseEffect
+	public sealed class NightVisionEffect : BaseEffect
 	{
 		public NightVisionEffect ()
 		{
@@ -73,21 +73,20 @@ namespace NightVisionAddin
 
 		protected override ColorBgra Render (in ColorBgra pixel)
 		{
-			return new ColorBgra () {
-				G = Utility.ClampToByte ((int) ((float) pixel.B * 0.1 + (float) pixel.G * Data.Brightness + (float) pixel.R * 0.2)),
-				B = 0,
-				R = 0,
-				A = pixel.A
-			};
+			return ColorBgra.FromBgra (
+				b: 0,
+				g: Utility.ClampToByte ((int) ((float) pixel.B * 0.1 + (float) pixel.G * Data.Brightness + (float) pixel.R * 0.2)),
+				r: 0,
+				a: pixel.A);
 		}
 
-		public class NightVisionData : EffectData
+		public sealed class NightVisionData : EffectData
 		{
 			[Caption ("Brightness"), MinimumValue (0), MaximumValue (1)]
-			public double Brightness = 0.6;
+			public double Brightness { get; set; } = 0.6;
 
 			[Caption ("Noise")]
-			public bool Noise = false;
+			public bool Noise { get; set; } = false;
 		}
 	}
 }

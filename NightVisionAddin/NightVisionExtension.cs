@@ -23,25 +23,22 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-using System;
+
 using Pinta.Core;
 
-namespace NightVisionAddin
-{
-	[Mono.Addins.Extension]
-	public class NightVisionExtension : IExtension
-	{
-		#region IExtension Members
-		public void Initialize ()
-		{
-			PintaCore.Effects.RegisterEffect (new NightVisionEffect ());
-		}
+namespace NightVisionAddin;
 
-		public void Uninitialize ()
-		{
-			PintaCore.Effects.UnregisterInstanceOfEffect (typeof (NightVisionEffect));
-		}
-		#endregion
+[Mono.Addins.Extension]
+public sealed class NightVisionExtension : IExtension
+{
+	public void Initialize ()
+	{
+		PintaCore.Effects.RegisterEffect (new NightVisionEffect ());
+	}
+
+	public void Uninitialize ()
+	{
+		PintaCore.Effects.UnregisterInstanceOfEffect (typeof (NightVisionEffect));
 	}
 }
 

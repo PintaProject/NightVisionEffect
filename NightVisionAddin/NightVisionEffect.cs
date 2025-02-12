@@ -31,64 +31,62 @@ using Pinta.Gui.Widgets;
 using Mono.Addins;
 using Pinta.Effects;
 
-namespace NightVisionAddin
+namespace NightVisionAddin;
+
+public sealed class NightVisionEffect : BaseEffect
 {
-	public class NightVisionEffect : BaseEffect
+	public NightVisionEffect ()
 	{
-		public NightVisionEffect ()
-		{
-			EffectData = new NightVisionData ();
+		EffectData = new NightVisionData ();
+	}
+
+	public override string Name => AddinManager.CurrentLocalizer.GetString ("Night Vision");
+	public override string EffectMenuCategory => AddinManager.CurrentLocalizer.GetString ("Stylize");
+
+	//TODO: Pull in other effects like noise and soften to make it even more nightvision-y
+
+	public override bool IsConfigurable => true;
+
+	public override bool IsTileable => true;
+
+	public override Task<bool> LaunchConfiguration ()
+	{
+		return LaunchSimpleEffectDialog (AddinManager.CurrentLocalizer);
+	}
+
+	public NightVisionData Data => (NightVisionData) EffectData!; // NRT - Set in constructor.
+
+	public override void Render (ImageSurface src, ImageSurface dst, ReadOnlySpan<RectangleI> rois)
+	{
+		if (!Data.Noise) {
+			foreach (var rect in rois)
+				Render (src, dst, rect); //Uses superclass chain of rendering to pass render down to single-pixel renderer.
+		} else {
+			AddNoiseEffect noiseEffect = new (PintaCore.Services);
+
+			noiseEffect.Render (src, dst, rois);
+
+			foreach (var rect in rois)
+				Render (dst, dst, rect); //Have it render colour changes pixel by pixel on the modified surface.
 		}
+	}
 
-		public override string Name => AddinManager.CurrentLocalizer.GetString ("Night Vision");
-		public override string EffectMenuCategory => AddinManager.CurrentLocalizer.GetString ("Stylize");
+	protected override ColorBgra Render (in ColorBgra pixel)
+	{
+		return ColorBgra.FromBgra (
+			b: 0,
+			g: Utility.ClampToByte ((int) ((float) pixel.B * 0.1 + (float) pixel.G * Data.Brightness + (float) pixel.R * 0.2)),
+			r: 0,
+			a: pixel.A);
+	}
 
-		//TODO: Pull in other effects like noise and soften to make it even more nightvision-y
+	public sealed class NightVisionData : EffectData
+	{
+		[Caption ("Brightness"), MinimumValue (0), MaximumValue (1)]
+		public double Brightness { get; set; } = 0.6;
 
-		public override bool IsConfigurable => true;
-
-		public override bool IsTileable => true;
-
-		public override Task<bool> LaunchConfiguration ()
-		{
-			return LaunchSimpleEffectDialog (AddinManager.CurrentLocalizer);
-		}
-
-		public NightVisionData Data => (NightVisionData) EffectData!; // NRT - Set in constructor.
-
-		public override void Render (ImageSurface src, ImageSurface dst, ReadOnlySpan<RectangleI> rois)
-		{
-			if (!Data.Noise) {
-				foreach (var rect in rois)
-					Render (src, dst, rect); //Uses superclass chain of rendering to pass render down to single-pixel renderer.
-			} else {
-				AddNoiseEffect noiseEffect = new (PintaCore.Services);
-
-				noiseEffect.Render (src, dst, rois);
-
-				foreach (var rect in rois)
-					Render (dst, dst, rect); //Have it render colour changes pixel by pixel on the modified surface.
-			}
-		}
-
-		protected override ColorBgra Render (in ColorBgra pixel)
-		{
-			return new ColorBgra () {
-				G = Utility.ClampToByte ((int) ((float) pixel.B * 0.1 + (float) pixel.G * Data.Brightness + (float) pixel.R * 0.2)),
-				B = 0,
-				R = 0,
-				A = pixel.A
-			};
-		}
-
-		public class NightVisionData : EffectData
-		{
-			[Caption ("Brightness"), MinimumValue (0), MaximumValue (1)]
-			public double Brightness = 0.6;
-
-			[Caption ("Noise")]
-			public bool Noise = false;
-		}
+		[Caption ("Noise")]
+		public bool Noise { get; set; } = false;
 	}
 }
 

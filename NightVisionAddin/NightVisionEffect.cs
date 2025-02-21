@@ -35,13 +35,20 @@ namespace NightVisionAddin;
 
 public sealed class NightVisionEffect : BaseEffect
 {
-	public NightVisionEffect ()
+	private readonly IChromeService chrome;
+	private readonly IWorkspaceService workspace;
+	internal NightVisionEffect (IServiceProvider services)
 	{
+		chrome = services.GetService<IChromeService> ();
+		workspace = services.GetService<IWorkspaceService> ();
 		EffectData = new NightVisionData ();
 	}
 
-	public override string Name => AddinManager.CurrentLocalizer.GetString ("Night Vision");
-	public override string EffectMenuCategory => AddinManager.CurrentLocalizer.GetString ("Stylize");
+	public override string Name
+		=> AddinManager.CurrentLocalizer.GetString ("Night Vision");
+
+	public override string EffectMenuCategory
+		=> AddinManager.CurrentLocalizer.GetString ("Stylize");
 
 	//TODO: Pull in other effects like noise and soften to make it even more nightvision-y
 
@@ -51,23 +58,29 @@ public sealed class NightVisionEffect : BaseEffect
 
 	public override Task<bool> LaunchConfiguration ()
 	{
-		return LaunchSimpleEffectDialog (AddinManager.CurrentLocalizer);
+		return chrome.LaunchSimpleEffectDialog (
+			workspace,
+			this,
+			AddinManager.CurrentLocalizer);
 	}
 
 	public NightVisionData Data => (NightVisionData) EffectData!; // NRT - Set in constructor.
 
-	public override void Render (ImageSurface src, ImageSurface dst, ReadOnlySpan<RectangleI> rois)
+	public override void Render (
+		ImageSurface source,
+		ImageSurface destination,
+		ReadOnlySpan<RectangleI> rois)
 	{
 		if (!Data.Noise) {
 			foreach (var rect in rois)
-				Render (src, dst, rect); //Uses superclass chain of rendering to pass render down to single-pixel renderer.
+				Render (source, destination, rect); //Uses superclass chain of rendering to pass render down to single-pixel renderer.
 		} else {
 			AddNoiseEffect noiseEffect = new (PintaCore.Services);
 
-			noiseEffect.Render (src, dst, rois);
+			noiseEffect.Render (source, destination, rois);
 
 			foreach (var rect in rois)
-				Render (dst, dst, rect); //Have it render colour changes pixel by pixel on the modified surface.
+				Render (destination, destination, rect); //Have it render colour changes pixel by pixel on the modified surface.
 		}
 	}
 

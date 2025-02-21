@@ -33,7 +33,7 @@ public sealed class NightVisionExtension : IExtension
 {
 	public void Initialize ()
 	{
-		PintaCore.Effects.RegisterEffect (new NightVisionEffect ());
+		PintaCore.Effects.RegisterEffect (new NightVisionEffect (PintaCore.Services));
 	}
 
 	public void Uninitialize ()

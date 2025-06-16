@@ -71,7 +71,7 @@
     <value>இரவு பார்வை</value>
   </data>
   <data name="Brightness" xml:space="preserve">
-    <value>ஒளி</value>
+    <value>ஒளிஅளவு</value>
   </data>
   <data name="Noise" xml:space="preserve">
     <value>இரைச்சல்</value>

@@ -17,7 +17,7 @@ jobs:
       with:
         submodules: true
     - name: Setup .NET
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
       # Install dotnet 6.0 for the mautil command
       with:
         dotnet-version: |

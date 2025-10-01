@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
@@ -58,4 +58,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Stylize" xml:space="preserve">
+    <value>風格化</value>
+  </data>
+  <data name="Night Vision" xml:space="preserve">
+    <value>夜視</value>
+  </data>
+  <data name="Brightness" xml:space="preserve">
+    <value>亮度</value>
+  </data>
+  <data name="Noise" xml:space="preserve">
+    <value>雜訊</value>
+  </data>
+  <data name="Night Vision Effect" xml:space="preserve">
+    <value>夜視效果</value>
+  </data>
+  <data name="A simple add-in that will recolor your image so that it looks like a night vision picture." xml:space="preserve">
+    <value>一個簡單的插件，可重新著色您的圖像，使其看起來像夜視圖片。</value>
+  </data>
 </root>

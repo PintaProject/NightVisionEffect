@@ -59,7 +59,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Night Vision" xml:space="preserve">
-    <value>الرؤية الليلية</value>
+    <value>رؤية ليلية</value>
   </data>
   <data name="Brightness" xml:space="preserve">
     <value>السطوع</value>
@@ -72,5 +72,8 @@
   </data>
   <data name="Stylize" xml:space="preserve">
     <value>إضفاء طابع</value>
+  </data>
+  <data name="A simple add-in that will recolor your image so that it looks like a night vision picture." xml:space="preserve">
+    <value>إضافة بسيطة تعيد تلوين الصورة لتبدو وكأنها صورة بالرؤية الليلية.</value>
   </data>
 </root>

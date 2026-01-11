@@ -1,21 +1,21 @@
-// 
+//
 // NightVisionEffect.cs
-//  
+//
 // Author:
 //       Robert Nordan <rpvn@robpvn.net>
-// 
+//
 // Copyright (c) 2013 Robert Nordan
-// 
+//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in
 // all copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -47,8 +47,9 @@ public sealed class NightVisionEffect : BaseEffect
 	public override string Name
 		=> AddinManager.CurrentLocalizer.GetString ("Night Vision");
 
+	// Note we use Pinta's translations here, not our add-in's, since this is a standard category name.
 	public override string EffectMenuCategory
-		=> AddinManager.CurrentLocalizer.GetString ("Stylize");
+		=> Pinta.Core.Translations.GetString ("Stylize");
 
 	//TODO: Pull in other effects like noise and soften to make it even more nightvision-y
 
